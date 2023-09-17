@@ -1,0 +1,4 @@
+name: ParticleFactory
+version: '${project.version}'
+main: org.aren.particlefactory.ParticleFactory
+api-version: '1.20'

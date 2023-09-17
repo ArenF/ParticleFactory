@@ -1,0 +1,25 @@
+{
+  "name": "fireball",
+  "shape": {
+    "type": "CIRCLE",
+    "range": 2.0,
+    "multiply": 1
+  },
+  "animation": [
+    {
+      "speed": 5,
+      "goto": {
+        "x": 0,
+        "y": 0,
+        "z": 8,
+        "pitch": 0,
+        "yaw": 0
+      },
+      "changing": {
+        "type": "CIRCLE",
+        "range": 2.0,
+        "multiply": 1
+      }
+    }
+  ]
+}
