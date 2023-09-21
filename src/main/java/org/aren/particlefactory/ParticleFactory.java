@@ -4,6 +4,7 @@ import dev.jorel.commandapi.AbstractCommandAPICommand;
 import dev.jorel.commandapi.CommandAPI;
 import dev.jorel.commandapi.CommandAPIBukkitConfig;
 import org.aren.particlefactory.command.ParticleCommand;
+import org.aren.particlefactory.compiler.DBNCompiler;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -22,7 +23,6 @@ public final class ParticleFactory extends JavaPlugin {
         ParticleCommand.commands().forEach(AbstractCommandAPICommand::register);
         ParticleManager manager = ParticleManager.initialize(plugin);
 
-
     }
 
     @Override
@@ -30,6 +30,9 @@ public final class ParticleFactory extends JavaPlugin {
         // Plugin startup logic
         CommandAPI.onEnable();
         plugin = this;
+
+        DBNCompiler dbnCompiler = new DBNCompiler(plugin);
+        dbnCompiler.lexer();
 
         ParticleScheduler scheduler = ParticleManager.getInstance().getScheduler();
         scheduler.runTaskTimer(plugin, 0, 1);

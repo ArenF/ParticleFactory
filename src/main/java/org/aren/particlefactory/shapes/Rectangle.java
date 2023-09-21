@@ -12,6 +12,13 @@ import java.util.stream.Collectors;
 
 public class Rectangle extends Shape {
 
+//    sqrt(a^2 + b^2) == c == range*2
+//    a^2 + b^2 == c^2
+//    a == b
+//    a^2 + a^2 == c^2
+//    2*(a^2) == c^2
+//    a^2 == (c^2) / 2
+//    a == sqrt((c^2) / 2)
 
     public Rectangle(Location location, Particle particle, double range, int multiply) {
         super(location, particle, range, multiply);
@@ -21,9 +28,11 @@ public class Rectangle extends Shape {
     @Override
     public List<Location> getShapePosition() {
 
+        double a = Math.sqrt((Math.pow(range, 2)) / 2);
+
         List<Vector> points = Arrays.asList(
-                new Vector(range, 0, range), new Vector(range, 0, -range),
-                new Vector(-range, 0, -range), new Vector(-range, 0, range)
+                new Vector(a, 0, a), new Vector(a, 0, -a),
+                new Vector(-a, 0, -a), new Vector(-a, 0, a)
         );
 
         points.forEach(vector -> {

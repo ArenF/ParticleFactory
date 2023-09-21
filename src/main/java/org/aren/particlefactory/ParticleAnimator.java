@@ -48,7 +48,6 @@ public class ParticleAnimator extends BukkitRunnable {
     @Override
     public void run() {
         if (delayed > 0) {
-            plugin.getLogger().info("from now on " + delayed);
             delayed--;
             return;
         }
