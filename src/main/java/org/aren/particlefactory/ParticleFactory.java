@@ -5,7 +5,6 @@ import dev.jorel.commandapi.CommandAPI;
 import dev.jorel.commandapi.CommandAPIBukkitConfig;
 import org.aren.particlefactory.command.ParticleCommand;
 import org.aren.particlefactory.compiler.DBNCompiler;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class ParticleFactory extends JavaPlugin {
